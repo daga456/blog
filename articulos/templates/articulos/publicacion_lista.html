@@ -1,18 +1,21 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Super notas</title>
-</head>
-<body>
+{% extends 'articulos/base.html' %}
 
-    <div>
-        <h1>Super blog</h1>
+{% block content %}
+
+<div class="content container">
+    <div class="row">
+        <div class="col-md-8">
+            {% for publicacion in publicaciones %}
+                <div class="post">
+                    <h2><a href="{% url 'publicacion_detalle' pk=publicacion.pk %}">{{ publicacion.titulo }}</a></h2>
+                    <div class="date">
+                        <p> Publicacion:{{ publicacion.fecha_publicacion }}</p>
+                    </div>
+                    <p>{{publicacion.textp}}</p>
+                </div>
+            {% endfor %}
+        </div>
     </div>
+</div>
 
-    {% for publicacion in publicaciones%}
-    <div> {{ publicacion }} </div>
-    {% endfor %}
-</body>
-</html>
+{% endblock %}
