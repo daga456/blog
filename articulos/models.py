@@ -13,7 +13,7 @@ class Publicacion(models.Model):
         self.save()
 
     def __str__(self):
-        return self.titulo
+        return self
     
     class Meta:
         verbose_name_plural = "Publicaciones"

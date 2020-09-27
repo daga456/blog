@@ -1,13 +1,21 @@
 {% extends 'articulos/base.html' %}
 
 {% block content %}
-    <div class="post">
-        {% if publicacion.fecha_publicacion %}
-            <div class="date">
-                {{ publicacion.fecha_publicacion }}
+
+<div class="content container">
+    <div class="row">
+        <div class="col-md-10">
+            <div class="post">
+                <h2 style="color: #dcdde1;">{{ publicacion.titulo }}</h2>
+                {% if publicacion.fecha_publicacion %}
+                <div class="date" style=" color: #bdc3c7;">
+                    {{ publicacion.fecha_publicacion }}
+                </div>
+                {% endif %}
+                <p style="color: #dcdde1;">{{ publicacion.textp|linebreaksbr }}</p>
             </div>
-        {% endif %}
-        <h2>{{ publicacion.titulo }}</h2>
-        <p>{{ publicacion.textp|linebreaksbr }}</p>
+        </div>
     </div>
+</div>
+
 {% endblock %}
