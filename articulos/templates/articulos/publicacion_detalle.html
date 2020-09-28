@@ -6,6 +6,7 @@
     <div class="row">
         <div class="col-md-10">
             <div class="post">
+                <a class="btn btn-default" href="{% url 'publicacion_editar' pk=publicacion.pk %}"><span class="fa fa-pencil"></span></a>
                 <h2 style="color: #dcdde1;">{{ publicacion.titulo }}</h2>
                 {% if publicacion.fecha_publicacion %}
                 <div class="date" style=" color: #bdc3c7;">
