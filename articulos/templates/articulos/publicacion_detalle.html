@@ -6,12 +6,18 @@
     <div class="row">
         <div class="col-md-10">
             <div class="post">
-                <h2 style="color: #dcdde1; margin-bottom: 0%;">{{ publicacion.titulo }} <a class="btn btn-default" href="{% url 'publicacion_editar' pk=publicacion.pk %}"><span class="fa fa-pencil"></span></a></h2>
-                {% if publicacion.fecha_publicacion %}
-                <div class="date" style=" color: #bdc3c7;">
-                    {{ publicacion.fecha_publicacion }}
-                </div>
+                <h2 style="color: #dcdde1; margin-bottom: 0%;">{{ publicacion.titulo }}</h2>
+                 <a class="btn btn-default" href="{% url 'publicacion_editar' pk=publicacion.pk %}"><span class="fa fa-pencil" style="color: white;"></span></a>
+                {% if publicacon.fecha_publicacion %}
+                    <div class="date" style="color: white;">
+                        {{ publicacion.fecha_publicacion }}
+                    </div>
+                {% else %}
+                    <a style="color: white;" class="btn btn-default" href="{% url 'publicacion_publicar' pk=publicacion.pk %}">Publicar</a>
+                    <a class="btn btn-default" href="{% url 'publicacion_eliminar' pk=publicacion.pk %}"><span class="fa fa-remove fa-fw" style="color: white;"></span></a>
+                
                 {% endif %}
+                
                 <br /><br />
                 <p style="color: #dcdde1;">{{ publicacion.textp|linebreaksbr }}</p>
             </div>

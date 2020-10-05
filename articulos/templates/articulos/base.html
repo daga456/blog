@@ -16,7 +16,13 @@
 <body class="fondo">
 
     <div class="page-header">
+        {% if user.is_authenticated %}
+        <a href="{% url 'publicacion_lista' %}" class="top-menu"><span class="fa fa-edit"></span></a>
         <a href="{% url 'publicacion_nueva' %}" class="top-menu"><span class="fa fa-plus"></span></a>
+        <p class="top-menu">Hola {{ user.username }} <small>(<a href="{% url 'logout' %}">Log out</a>)</small></p>
+        {% else %}
+        <a href="{% url 'login' %}" class="top-menu"><span class="fa fa-lock"></span></a>
+        {% endif %}
         <h1><a href="/">Super blog</a></h1>
     </div>
 

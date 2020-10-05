@@ -8,7 +8,7 @@
             {% for publicacion in publicaciones %}
                 <div class="card post" style="width: 18rem; margin: 1rem;">
                     <div class="card-body">
-                      <h5 class="card-title">{{ publicacion.titulo }}</h5>
+                      <h5 class="card-title" style="color:black">{{ publicacion.titulo }}</h5>
                       <h6 class="card-subtitle mb-2 text-muted date">{{ publicacion.fecha_publicacion }}</h6>
                       <p class="card-text contenido">{{publicacion.textp}}</p>
                       <a href="{% url 'publicacion_detalle' pk=publicacion.pk %}" class="card-link">Detalles</a>
