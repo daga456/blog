@@ -2,12 +2,12 @@
 
 {% block content %}
 
-<div class="content container">
+<div class="content container" style="margin-top: 2rem;">
     <div class="row">
         <div class="col-md-10">
             <div class="post">
                 <h2 style="color: #dcdde1; margin-bottom: 0%;">{{ publicacion.titulo }}</h2>
-                 e<a class="btn btn-default" href="{% url 'publicacion_editar' pk=publicacion.pk %}"><span class="fa fa-pencil" style="color: white;"></span></a>
+                 <a class="btn btn-default" href="{% url 'publicacion_editar' pk=publicacion.pk %}"><span class="fa fa-pencil" style="color: white;"></span></a>
                 {% if publicacon.fecha_publicacion %}
                     <div class="date" style="color: white;">
                         {{ publicacion.fecha_publicacion }}

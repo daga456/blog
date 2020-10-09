@@ -2,12 +2,17 @@
 
 {% block content %}
 
-{% for publicacion in publicaciones %}
-    <div class="post">
-        <p class="date">creado: {{ publicacion.fecha_creacion|date:'d-m-Y' }}</p>
-        <h1><a href="{% url 'publicacion_detalle' pk=publicacion.pk %}">{{ publicacion.titulo }}</a></h1>
-        <p>{{ publicacion.textp|truncatechars:200 }}</p>
-    </div>
+
+<div class="container-flud">
+    {% for publicacion in publicaciones %}
+    <div class="card post" style="width: 18rem; margin: 1rem;">
+        <div class="card-body">
+          <h5 class="card-title" style="color:black"> <a href="{% url 'publicacion_detalle' pk=publicacion.pk %}">  {{ publicacion.titulo }} </a> </h5>
+          <h6 class="card-subtitle mb-2 text-muted date">creado: {{ publicacion.fecha_creacion|date:'d-m-Y' }}</h6>
+          <p class="card-text contenido" style="color:black">{{publicacion.textp|truncatechars:200 }}</p>
+        </div>
+      </div>
 {% endfor%}
+</div>
 
 {% endblock %}
