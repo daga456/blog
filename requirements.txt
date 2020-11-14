@@ -1,2 +1,2 @@
-Django~=3.1.1
+Django
 django-admin-interface~=0.13.4
