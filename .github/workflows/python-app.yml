@@ -29,4 +29,4 @@ jobs:
         python manage.py makemigrations
         python manage.py migrate
     - name: Run test
-      run: python manage.py test blog.test.test_models.PublicacionModelTest
+      run: python manage.py test articulos.test.test_models.PublicacionModelTest
